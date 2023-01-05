@@ -1,6 +1,6 @@
 # RabbitMQ with Node.js POC
 
-Basic RabbitMQ integration with Node.js using the 'amqpblib' package.
+Basic RabbitMQ integration with Node.js using the 'amqplib' package.
 
 ## Usage
 
