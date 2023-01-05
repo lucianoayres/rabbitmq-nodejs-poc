@@ -1,22 +1,25 @@
 const amqplib = require('amqplib/callback_api')
 
-const queue = 'tasks'
+const QUEUE = 'tasks'
 
-amqplib.connect('amqp://localhost:5672', (err, conn) => {
-	if (err) throw err
+amqplib.connect(
+	'amqp://localhost:5672',
+	(rabbitmqConnectionError, rabbitmqConnection) => {
+		if (rabbitmqConnectionError) throw rabbitmqConnectionError
 
-	conn.createChannel((err, ch2) => {
-		if (err) throw err
+		rabbitmqConnection.createChannel((channelError, channel) => {
+			if (channelError) throw channelError
 
-		ch2.assertQueue(queue)
+			channel.assertQueue(QUEUE)
 
-		ch2.consume(queue, (msg) => {
-			if (msg !== null) {
-				console.log(`[CONSUMER] Received: ${msg.content.toString()}`)
-				ch2.ack(msg)
-			} else {
-				console.log('Consume cancelled by server')
-			}
+			channel.consume(QUEUE, (message) => {
+				if (message !== null) {
+					console.log(`[CONSUMER] Received: ${message.content.toString()}`)
+					channel.ack(message)
+				} else {
+					console.log('Consume cancelled by the server')
+				}
+			})
 		})
-	})
-})
+	}
+)
