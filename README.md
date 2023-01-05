@@ -18,7 +18,7 @@ yarn
 npm install
 ```
 
-2. Clone this project and start the local RabbitMQ instance with Docker Compose in the root folder where the 'docker-compose.yml' file is located:
+2. Start the local RabbitMQ instance with Docker Compose in the root folder where the 'docker-compose.yml' file is located:
 
 ```bash
 sudo docker-compose up
