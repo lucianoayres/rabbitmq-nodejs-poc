@@ -1,6 +1,6 @@
 # RabbitMQ with Node.js POC
 
-Basic RabbitMQ integration with Node.js using the [amqplib](https://www.npmjs.com/package/amqplib) library.
+Basic RabbitMQ integration with Node.js using [amqplib](https://www.npmjs.com/package/amqplib).
 
 ## Required Dependencies
 - Docker
