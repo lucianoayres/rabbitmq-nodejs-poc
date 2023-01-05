@@ -13,7 +13,7 @@ Basic RabbitMQ integration with Node.js using the [amqplib](https://www.npmjs.co
 ```bash
 yarn 
 ```
-- or -
+-- or --
 ```bash
 npm install
 ```
