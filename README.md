@@ -40,4 +40,4 @@ node consumer.js
 node producer.js
 ```
 
-7. You should be able to see the received messages on the 'consumer' terminal window.
+7. You should be able to see the received messages on the 'consumer' terminal window and also the incoming activity on the RabbitMQ admin panel running on the browser.
