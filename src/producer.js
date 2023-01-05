@@ -1,6 +1,6 @@
 const amqplib = require('amqplib/callback_api')
 
-const queue = 'tasks'
+const QUEUE = 'tasks'
 
 const SEND_MSG_INTERVAL = 2000
 let msgCount = 0
@@ -13,13 +13,13 @@ amqplib.connect(
 		rabbitmqConnection.createChannel((channelError, channel) => {
 			if (channelError) throw channelError
 
-			channel.assertQueue(queue)
+			channel.assertQueue(QUEUE)
 
 			setInterval(() => {
 				const newMessage = `Message #${++msgCount} (Elapsed time: ${
 					(SEND_MSG_INTERVAL * msgCount) / 1000
 				} seconds)`
-				channel.sendToQueue(queue, Buffer.from(newMessage))
+				channel.sendToQueue(QUEUE, Buffer.from(newMessage))
 				console.log(`[PRODUCER] Message #${msgCount} sent`)
 			}, SEND_MSG_INTERVAL)
 		})
