@@ -6,7 +6,7 @@ Basic RabbitMQ integration with Node.js using the 'amqplib' package.
 
 1. Install Docker and Docker Compose
 
-2. Start the local RabbitMQ instance with Docker Compose in the root folder where the 'docker-compose.yml' file is located:
+2. Clone this project and start the local RabbitMQ instance with Docker Compose in the root folder where the 'docker-compose.yml' file is located:
 
 ```bash
 sudo docker-compose up
