@@ -12,7 +12,7 @@ amqplib.connect('amqp://localhost:5672', (err, conn) => {
 
 		ch2.consume(queue, (msg) => {
 			if (msg !== null) {
-				console.log(msg.content.toString())
+				console.log(`[CONSUMER] Received: ${msg.content.toString()}`)
 				ch2.ack(msg)
 			} else {
 				console.log('Consume cancelled by server')
