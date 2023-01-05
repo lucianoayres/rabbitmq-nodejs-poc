@@ -28,16 +28,16 @@ sudo docker-compose up
 
 4. Type 'guest' for both the username and password
 
-5. Now open a terminal window and start the 'consumer' script that will listen to the messages in the RabbitMQ Queue:
+5. Now open a terminal window and start the 'consumer' script, located in the `src` directory, that will listen to the messages in the RabbitMQ Queue:
 
 ```bash
-node ./src/consumer.js
+node consumer.js
 ```
 
 6. Finally, start the 'producer` script on another terminal window that will send the messages to the queue:
 
 ```bash
-node ./src/producer.js
+node producer.js
 ```
 
 7. You should be able to see the received messages on the 'consumer' terminal window and also the incoming activity on the RabbitMQ admin panel running on the browser.
